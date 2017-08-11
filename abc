@@ -1,0 +1,53 @@
+<html ng-app = 'TooMuch' >
+  <head>
+    
+    <title>Lunch Checker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      html
+      {
+       color; white;
+      }
+      body
+      {
+        background: -webkit-linear-gradient(left top, #80d4ff, #dd99ff);
+        color:white;
+      }
+      h2
+      {
+        font-size: 19px;
+      }
+      input
+      {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+<body ng-controller='TooMuchController'>
+   <div class="container">
+     <h1>Lunch Checker </h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text" ng-model = "userInput"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+             
+         </div>
+         <p>Empty space between commas are not considered part of the count.</p>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+           {{message}}
+         </div>
+         <div class="form-group">
+             <button ng-enter='CheckMuch()' ng-click = 'CheckMuch()' class="btn btn-default">Check If Too Much</button>
+         </div>
+
+   </div>
+   
+</body>
+</html>
